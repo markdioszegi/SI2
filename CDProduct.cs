@@ -2,12 +2,21 @@ namespace InventoryProject
 {
     public class CDProduct : Product
     {
-        int NumOfTracks;
-        public CDProduct(string name, int price, int numOfTracks) : base(name, price)
+        private int _numOfTracks;
+        public int NumOfTracks { get { return _numOfTracks; } set { _numOfTracks = value; } }
+
+        public CDProduct() { }
+
+        public CDProduct(string name, int price, int size)
         {
-            Name = name;
-            Price = price;
-            NumOfTracks = numOfTracks;
+            _name = name;
+            _price = price;
+            _numOfTracks = size;
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {Name} | Price: {Price} | Number of tracks: {NumOfTracks}.\n";
         }
     }
 }

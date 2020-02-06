@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="PersistentStore">
+  <Products>
+    <Product xsi:type="BookProduct">
+      <Name>Harry Pjotter and the prisoner of Moscow</Name>
+      <Price>1250</Price>
+      <NumOfPages>320</NumOfPages>
+    </Product>
+    <Product xsi:type="BookProduct">
+      <Name>Slavic dishes</Name>
+      <Price>3500</Price>
+      <NumOfPages>3</NumOfPages>
+    </Product>
+    <Product xsi:type="CDProduct">
+      <Name>Zámbó Jimmy selection</Name>
+      <Price>790</Price>
+      <NumOfTracks>12</NumOfTracks>
+    </Product>
+  </Products>
+</Products>roduct">
+      <Name>DJ Tőtöttcigi discography</Name>
+      <Price>1590</Price>
+      <NumOfTracks>8</NumOfTracks>
+    </Product>
+  </Products>
+</Products>
