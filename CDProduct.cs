@@ -16,7 +16,7 @@ namespace InventoryProject
 
         public override string ToString()
         {
-            return $"Name: {Name} | Price: {Price} | Number of tracks: {NumOfTracks}.\n";
+            return $"Name: {Name} | Price: {Price} | Number of tracks: {NumOfTracks}.";
         }
     }
 }

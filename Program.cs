@@ -13,8 +13,9 @@ namespace InventoryProject
         void HandleMenu()
         {
             StoreManager storeManager = new StoreManager();
-            IStorageCapable store = new PersistentStore();
-            storeManager.AddStorage((IStorageCapable)store);
+            //IStorageCapable store = new PersistentStore();    
+            IStorageCapable store = new PersistentStoreCsv();
+            storeManager.AddStorage(store);
             storeManager.AddBookProduct("Harry Pjotter and the prisoner of Moscow", 1250, 320);
             storeManager.AddBookProduct("Slavic dishes", 3500, 3);
             storeManager.AddCDProduct("Zámbó Jimmy selection", 790, 12);

@@ -13,7 +13,7 @@ namespace InventoryProject
         }
         public override string ToString()
         {
-            return $"Name: {Name}, Price: {Price}, Number of pages: {NumOfPages}.\n";
+            return $"Name: {Name}, Price: {Price}, Number of pages: {NumOfPages}.";
         }
     }
 }

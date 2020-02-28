@@ -26,7 +26,7 @@ namespace InventoryProject
             string s = string.Empty;
             foreach (var product in Storage.GetAllProducts())
             {
-                s += product.ToString();
+                s += product.ToString() + "\n";
             }
             return s;
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="PersistentStore">
+<Store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="PersistentStore">
   <Products>
     <Product xsi:type="BookProduct">
       <Name>Harry Pjotter and the prisoner of Moscow</Name>
@@ -16,11 +16,10 @@
       <Price>790</Price>
       <NumOfTracks>12</NumOfTracks>
     </Product>
-  </Products>
-</Products>roduct">
+    <Product xsi:type="CDProduct">
       <Name>DJ Tőtöttcigi discography</Name>
       <Price>1590</Price>
       <NumOfTracks>8</NumOfTracks>
     </Product>
   </Products>
-</Products>
+</Store>

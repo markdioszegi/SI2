@@ -1,33 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
 
 namespace InventoryProject
 {
-    //[XmlRoot("Products")]
-    [XmlInclude(typeof(PersistentStore))]
-    [XmlInclude(typeof(BookProduct))]
-    [XmlInclude(typeof(CDProduct))]
-    public abstract class Store : IStorageCapable
+    public abstract class CsvStore : IStorageCapable
     {
         protected List<Product> products;
         public List<Product> Products { get { return products; } set { products = value; } }
-        public Store()
+        public abstract void StoreProduct(Product product);
+        public CsvStore()
         {
-            products = new List<Product>();
-        }
-        void SaveToXML(Product product)
-        {
-            string fileName = "products.xml";
-            using (var fileStream = new FileStream(fileName, FileMode.OpenOrCreate))
-            {
-                XmlSerializer xml = new XmlSerializer(typeof(Store));
-                xml.Serialize(fileStream, this);
-            }
+            Products = new List<Product>();
         }
 
-        public abstract void StoreProduct(Product product);
+        public List<Product> GetAllProducts()
+        {
+            return products;
+        }
+
         protected Product CreateProduct(string type, string name, int price, int size)
         {
             Product product;
@@ -40,22 +31,6 @@ namespace InventoryProject
             return product;
         }
 
-        public List<Product> LoadProducts()
-        {
-            return new List<Product>();
-        }
-
-        public void StoreIt(Product product)
-        {
-            StoreProduct(product);
-            SaveToXML(product);
-        }
-
-        public List<Product> GetAllProducts()
-        {
-            return products;
-        }
-
         public void StoreCDProduct(string name, int price, int tracks)
         {
             Product product = CreateProduct("CD", name, price, tracks);
@@ -66,6 +41,21 @@ namespace InventoryProject
         {
             Product product = CreateProduct("Book", name, price, pages);
             StoreIt(product);
+        }
+
+        public void StoreIt(Product product)
+        {
+            StoreProduct(product);
+            SaveToCsv(product);
+        }
+
+        private void SaveToCsv(Product product)
+        {
+            string fileName = "products.csv";
+            using (var fileStream = new StreamWriter(fileName, true))
+            {
+                fileStream.WriteLine(product.ToString());
+            }
         }
     }
 }

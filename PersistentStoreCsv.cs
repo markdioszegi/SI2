@@ -1,9 +1,6 @@
 namespace InventoryProject
 {
-    /// <summary>
-    /// Stores to an XML File
-    /// </summary>
-    public class PersistentStore : Store
+    public class PersistentStoreCsv : CsvStore
     {
         public override void StoreProduct(Product product)
         {
